@@ -1,3 +1,10 @@
+/**
+ * @file app.js
+ * @author Bastian Bastias Sanchez. 
+ * @studentID 301242983 
+ * @date October 25th 2022.
+ * @since  1.1.0
+  */
 // moddules for node and express
 let createError = require('http-errors');
 let express = require('express');

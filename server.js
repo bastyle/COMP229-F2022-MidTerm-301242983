@@ -1,3 +1,11 @@
+/**
+ * @file server.js
+ * @author Bastian Bastias Sanchez. 
+ * @studentID 301242983 
+ * @date October 25th 2022.
+ * @since  1.1.0
+  */
+
 let app = require('./server/config/app');
 let debug = require('debug')('comp308-w2019-midterm:server');
 let http = require('http');
