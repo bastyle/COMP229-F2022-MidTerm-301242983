@@ -17,13 +17,27 @@ let mongoose = require('mongoose');
 // URI
 let DB = require('./db');
 
-mongoose.connect(process.env.URI || DB.URI, {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(process.env.URI || DB.URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 let mongoDB = mongoose.connection;
 mongoDB.on('error', console.error.bind(console, 'Connection Error:'));
-mongoDB.once('open', ()=> {
+mongoDB.once('open', () => {
   console.log("Connected to MongoDB...");
 });
+
+/*const fs = require('fs');
+let Book = require('../models/books');
+let rawdata = fs.readFileSync('books.json');
+let booksJson = JSON.parse(rawdata);
+
+Book.insertMany(booksJson.books, function(err, res) {
+  if (err) {
+    console.log(err);
+  }
+  else {
+    console.log("OK")
+  }
+});*/
 
 
 // define routers
@@ -50,12 +64,12 @@ app.use('/books', books);
 
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
