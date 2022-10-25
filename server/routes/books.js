@@ -5,6 +5,7 @@ let mongoose = require('mongoose');
 
 // define the book model
 let Book = require('../models/books');
+let BOOK_INDEX_VIEW = '/books';
 
 /* GET books List page. READ */
 router.get('/', (req, res, next) => {
@@ -29,7 +30,7 @@ router.get('/add', (req, res, next) => {
   /*****************
    * ADD CODE HERE *
    *****************/
-  res.render('books/details', { title: 'Add Book' })
+  res.render('books/details', { title: 'Add Book', books: '' })
 
 });
 
@@ -55,7 +56,7 @@ router.post('/add', (req, res, next) => {
     }
     else {
       // refresh the book list
-      res.redirect('/books');
+      res.redirect(BOOK_INDEX_VIEW);
     }
   });
 
@@ -90,26 +91,26 @@ router.post('/:id', (req, res, next) => {
    * ADD CODE HERE *
    *****************/
 
-   let id = req.params.id
+  let id = req.params.id
 
-   let updatedBook = Book({
-       "_id": id,
-       "Title": req.body.title,
-       "Description": req.body.description,
-       "Price": req.body.price,
-       "Author": req.body.author,
-       "Genre": req.body.genre
-   });
+  let updatedBook = Book({
+    "_id": id,
+    "Title": req.body.title,
+    "Description": req.body.description,
+    "Price": req.body.price,
+    "Author": req.body.author,
+    "Genre": req.body.genre
+  });
 
-   Book.updateOne({ _id: id }, updatedBook, (err) => {
-       if (err) {
-           console.log(err);
-           res.end(err);
-       }
-       else {
-           res.redirect('/books');
-       }
-   });
+  Book.updateOne({ _id: id }, updatedBook, (err) => {
+    if (err) {
+      console.log(err);
+      res.end(err);
+    }
+    else {
+      res.redirect(BOOK_INDEX_VIEW);
+    }
+  });
 
 });
 
@@ -120,17 +121,17 @@ router.get('/delete/:id', (req, res, next) => {
    * ADD CODE HERE *
    *****************/
 
-   let id = req.params.id;
+  let id = req.params.id;
 
-   Book.deleteOne({ _id: id }, (err) => {
-       if (err) {
-           console.log(err);
-           res.end(err);
-       }
-       else {
-           res.redirect('/books');
-       }
-   });
+  Book.deleteOne({ _id: id }, (err) => {
+    if (err) {
+      console.log(err);
+      res.end(err);
+    }
+    else {
+      res.redirect(BOOK_INDEX_VIEW);
+    }
+  });
 
 
 });
