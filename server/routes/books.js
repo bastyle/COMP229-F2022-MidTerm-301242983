@@ -28,7 +28,7 @@ router.get('/', (req, res, next) => {
         books: books
       });
     }
-  });
+  }).sort({ Title: 1 }).collation({ locale: "en", caseLevel: false });;
 
 });
 

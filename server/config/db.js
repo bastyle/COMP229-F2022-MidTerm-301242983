@@ -6,6 +6,9 @@
  * @since  1.1.0
   */
 
+require('dotenv').config();
+const URL_DB = process.env.URL_DB;
+
 module.exports = {
-  "URI": "mongodb+srv://midtermUser:93pYJunhqHCg0tdx@cluster0.fo4mgob.mongodb.net/midterm?retryWrites=true&w=majority"
+  "URI": URL_DB
 };
