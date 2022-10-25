@@ -16,7 +16,7 @@ please use **`npm install`** to install project dependencies
 - HTML
 
 ## **Heroku URL**
-
+https://comp229-midterm-bastian-bastia.herokuapp.com/
 
 ## youtube
 
