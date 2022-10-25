@@ -19,4 +19,7 @@ please use **`npm install`** to install project dependencies
 https://comp229-midterm-bastian-bastia.herokuapp.com/
 
 ## youtube
+https://www.youtube.com/watch?v=6dJH9CIymDI
 
+## github
+https://github.com/bastyle/comp229-midterm
