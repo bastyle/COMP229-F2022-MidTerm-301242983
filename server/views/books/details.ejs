@@ -20,7 +20,7 @@
               <div class="form-group">
                 <label for="PriceTextField">Price</label>
                 <input type="number" class="form-control" id="PriceTextField"
-                placeholder="Book Price" name="price" type="number"
+                placeholder="Book Price" name="price" type="number" step=".01"
                 <% if(title === 'Edit Book') { %>
                 value="<%= books.Price %>"  
                 <% } else {%>
