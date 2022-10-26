@@ -22,4 +22,4 @@ https://comp229-midterm-bastian-bastia.herokuapp.com/
 https://www.youtube.com/watch?v=6dJH9CIymDI
 
 ## github
-https://github.com/bastyle/comp229-midterm
+https://github.com/bastyle/COMP229-F2022-MidTerm-301242983
